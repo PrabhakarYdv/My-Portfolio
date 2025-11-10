@@ -858,6 +858,17 @@ section {
   padding-bottom: 130px;
 }
 
+.contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-box:hover{
+  transform: scale(1.5);
+  transition: transform 1s ease-in-out;
+}
+
 .contact .info {
   padding: 30px;
   background: #FFFFFF;
