@@ -359,19 +359,21 @@ section {
   margin-bottom: 0;
 }
 
-.downloadBtn {
+.resumeBtn {
   background-color: #000000;
   color: #FFFFFF;
-  padding: 8px 15px;
+  padding: 10px 20px;
+  font-size: 16px;
   border-radius: 20px;
   border: none;
+  transition: 0.5s ease-in-out;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
 }
 
-.downloadBtn:hover {
+.resumeBtn:hover {
   background-color: #393f43;
   color: #ffffff;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1);
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 1);
 }
 
 
@@ -493,10 +495,11 @@ section {
 
 .resume .resume-item h5 {
   font-size: 16px;
-  background: #e4edf9;
+  background: #e3e6ea;
   padding: 5px 15px;
   display: inline-block;
   font-weight: 600;
+  border-radius: 5px;
   margin-bottom: 10px;
 }
 
@@ -520,8 +523,24 @@ section {
   border-radius: 50px;
   left: -9px;
   top: 0;
-  background: #fff;
+  background: #FFFFFF;
   border: 2px solid #1f5297;
+}
+
+.downloadBtn {
+  background-color: #181818;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #FFFFFF;
+  border-radius: 20px;
+  transition: 0.5s ease-in-out;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+}
+
+.downloadBtn:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+  border: 1px solid #343333;
 }
 
 /*--------------------------------------------------------------
@@ -841,19 +860,20 @@ section {
 
 .contact .info {
   padding: 30px;
-  background: #fff;
+  background: #FFFFFF;
+  border-radius: 10px;
   width: 100%;
   justify-content: center;
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 1px 5px 14px rgba(0, 0, 0, 0.5);
 }
 
 .contact .info i {
   font-size: 20px;
-  color: #149ddd;
+  color: #FFFFFF;
   float: left;
   width: 44px;
   height: 44px;
-  background: #dff3fc;
+  background: #212431;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -873,7 +893,7 @@ section {
   padding: 0 0 10px 60px;
   margin-bottom: 20px;
   font-size: 14px;
-  color: #173b6c;
+  color: #0b3064;
 }
 
 .contact .info .email p {
@@ -887,8 +907,8 @@ section {
 .contact .info .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #333;
-  color: #fff;
+  background: #333333;
+  color: #FFFFFF;
   line-height: 1;
   padding: 8px 0;
   border-radius: 50%;
@@ -900,21 +920,21 @@ section {
 }
 
 .contact .info .social-links a:hover {
-  background: #149ddd;
-  color: #fff;
+  background: #ffffff;
+  color: #000000;
 }
 
 .contact .info .email:hover i,
 .contact .info .address:hover i,
 .contact .info .phone:hover i {
-  background: #149ddd;
-  color: #fff;
+  background: #4f5151;
+  color: #ffffff;
 }
 
 .contact .php-email-form {
   width: 100%;
   padding: 30px;
-  background: #fff;
+  background: #FFFFFF;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
 }
 
