@@ -632,26 +632,48 @@ section {
   align-items: center;
   /* justify-content: center; */
   gap: 25px;
-  cursor: pointer;
 }
 
 .project-container .projects .project-cards .card {
   height: 400px;
   width: 350px;
   flex: 0 0 30%;
-   /* flex: 1 1 calc(33.333% - 25px); */
   transition: 1s;
   border: none;
   box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.2);
-  opacity: 1;
-  transform: scale(1) skewY(0deg);
-  animation: projectsAnimation 1s linear;
+  cursor: pointer;
+  transform: translateX(0) translateY(0);
 }
 
 .project-container .projects .project-cards .card:hover {
   box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.5);
   transform: scale(1.05);
+
 }
+
+.project-container .projects .project-cards .animate {
+  /* animation: 1s forwards ; */
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.4,0,0.2,1);
+}
+
+.project-container .projects .project-cards .card:nth-child(4n+1).animate {
+  animation-name: slideFromLeft;
+}
+
+.project-container .projects .project-cards .card:nth-child(4n+2).animate {
+  animation-name: slideFromTop;
+}
+
+.project-container .projects .project-cards .card:nth-child(4n+3).animate {
+  animation-name: slideFromRight;
+}
+
+.project-container .projects .project-cards .card:nth-child(4n+4).animate {
+  animation-name: slideFromBottom;
+}
+
 
 
 /*--------------------------------------------------------------
@@ -861,12 +883,82 @@ section {
 
 @keyframes projectsAnimation {
   0% {
-    opacity: 0;
-    transform: scale(0.7) skewY(10deg);
+    transform: translateX(-100px);
+  }
+
+  20% {
+    transform: translateY(-100px);
+  }
+
+  40% {
+    transform: translateX(100px);
+  }
+
+  60% {
+    transform: translateY(100px);
+  }
+
+  80% {
+    transform: translateX(-100px);
   }
 
   100% {
-    opacity: 1;
-    transform: scale(1) skewY(0deg);
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100px) rotateY(-10deg);
+  }
+
+  60% {
+    transform: translateX(10px) rotateY(0deg);
+  }
+
+  100% {
+    transform: translateX(0) rotateY(0deg);
+  }
+}
+
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(100px) rotateY(10deg);
+  }
+
+  60% {
+    transform: translateX(-10px) rotateY(0deg);
+  }
+
+  100% {
+    transform: translateX(0) rotateY(0deg);
+  }
+}
+
+@keyframes slideFromTop {
+  0% {
+    transform: translateY(-100px) rotateX(10deg);
+  }
+
+  60% {
+    transform: translateY(10px) rotateX(0deg);
+  }
+
+  100% {
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+@keyframes slideFromBottom {
+  0% {
+    transform: translateY(100px) rotateX(-10deg);
+  }
+
+  60% {
+    transform: translateY(-10px) rotateX(0deg);
+  }
+
+  100% {
+    transform: translateY(0) rotateX(0deg);
   }
 }

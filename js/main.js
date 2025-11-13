@@ -194,9 +194,34 @@
    */
 
   const filterButtons = document.querySelectorAll(".filter-btn ul li")
+  const projectContainer = document.querySelector(".project-cards")
   const projects = document.querySelectorAll(".project-cards .card")
 
+  let allProjectTotal = 0;
+  let webProjectTotal = 0;
+  let mobProjectTotal = 0;
+
+  allProjectTotal = projects.length
+
+  projects.forEach((project) => {
+    if (project.dataset.category === "web") {
+      webProjectTotal += 1
+    }
+    if (project.dataset.category === "mob") {
+      mobProjectTotal += 1
+    }
+  })
+
+  // console.log(`${allProjectTotal} ${webProjectTotal} ${mobProjectTotal}`)
+
+  document.getElementById("all").innerHTML = `All (${allProjectTotal})`
+  document.getElementById("web").innerHTML = `Web (${webProjectTotal})`
+  document.getElementById("mob").innerHTML = `Mob (${mobProjectTotal})`
+
+  // triggerAnimation(projects)
+
   // console.log(filterButtons)
+
   filterButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
       const selectedCategory = btn.getAttribute("data-category")
@@ -208,23 +233,46 @@
         btn.classList.add("active")
       })
 
-      projects.forEach((project,indeex) => {
+      projects.forEach((project) => {
+        project.classList.remove("animate")
         // console.log(project.innerHTML)
         // console.log(project)
         // console.log(project.dataset)
         if (selectedCategory === "all" || selectedCategory === project.dataset.category) {
           project.style.display = "flex"
+          project.classList.remove("animate")
+          void project.offsetWidth
+          project.classList.add("animate")
         }
         else {
           project.style.display = "none"
         }
       })
-
     })
 
-
-
   })
+
+
+  projects.forEach((projectCards)=>{
+    projectCards.classList.remove("animate")
+  })
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        projects.forEach((element) => {
+          element.classList.remove("animate")
+          void element.offsetWidth
+          element.classList.add("animate")
+        })
+        observer.disconnect()
+      }
+    })
+  })
+
+  if (projectContainer) {
+    observer.observe(projectContainer)
+  }
 
 
 
