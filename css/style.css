@@ -640,7 +640,7 @@ section {
   height: 400px;
   width: 350px;
   flex: 0 0 30%;
-  transition: 1s;
+  transition: 1s !important;
   border: none;
   box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
@@ -649,8 +649,9 @@ section {
 }
 
 .project-container .projects .project-cards .card:hover {
-  box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.5);
-  transform: scale(1.05);
+  transition: 1s linear !important;
+  box-shadow: 4px 5px 10px rgba(152, 211, 235, 0.5);
+  transform: scale(1.05) !important;
 
 }
 
